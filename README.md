@@ -1,34 +1,68 @@
 # Cybersecurity : CSN150
-Project: ESP32 XXXXXXXX
+Project: ESP32-CAM Camera Setup
 
 ## Purpose
-Set up ESP32 and Arduino enviornment. Execute sketch " Wifiscanner". 
+In this lab, I set up the ESP32-CAM and uploaded camera firmware using Arduino IDE. The goal was to connect the camera to WiFi and stream live video through a web browser. 
 
 ## Equipment
+- ESP32-CAM  
+- USB cable  
+- Arduino IDE
+  
 * [ESP32Cam](https://www.amazon.com/Aideepen-ESP32-CAM-Bluetooth-ESP32-CAM-MB-Arduino/dp/B08P2578LV/ref=sr_1_3?crid=4FY0ECFW0ZX7&keywords=ESP32+Cam&qid=1678902050&sprefix=esp32+cam%2Caps%2C240&sr=8-3)
 
 * [USB Micro Data Cable](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0711PVX6Z/ref=sr_1_1_sspa?keywords=micro+usb+data+cable&qid=1678902214&sprefix=Micro+USB+data+%2Caps%2C89&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFaU0NaUVZHU1RFUlAmZW5jcnlwdGVkSWQ9QTA3NTA4MDVFVERCS01HVlgxM1YmZW5jcnlwdGVkQWRJZD1BMDE4NTE1NTIwWUdONkdWSzU1M1Amd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
 
 ## Links to documentation and tools
+https://lastminuteengineers.com/getting-started-with-esp32-cam/
+
+Arduino IDE: https://www.arduino.cc/en/software/
+
+ESP32 Board package: https://dl.espressif.com/dl/package_esp32_index.json
 
 ##### Video 1: 
+https://www.youtube.com/watch?v=4inE-n6kXSE
 
 ##### Other Links: 
+https://lastminuteengineers.com/getting-started-with-esp32-cam/
 
 ##### AI GPTs used
 
-## Steps I followed
-1. Write the steps you followed here.  This way you can keep track of where you might have messed up if the project does not work. 
-
+## Steps I followed 
+1. Installed ESP32 board in Arduino IDE  
+2. Selected AI Thinker ESP32-CAM  
+3. Opened CameraWebServer example  
+4. Entered WiFi credentials  
+5. Configured camera model in board_config.h  
+6. Uploaded code using BOOT button  
+7. Opened Serial Monitor  
+8. Accessed camera using IP address
+   
 ## Problems and Solutions
-Note your problems or errors here.  Google any error you may come across, and not what you tried (even if it does not work), and what was the final answer. Document your errors and solutions that worked for you.  
+Problem 1: ESP32 failed to connect during upload
 
-**Problem:** E (485) camera: Camera probe failed with error 0x105(ESP_ERR_NOT_FOUND)
-Camera init failed with error 0x105
-**Solution:**
+I received the error “Failed to connect to ESP32” when trying to upload the code.
+Solution: I fixed this by holding the BOOT button when the message “Connecting...” appeared so the board could enter flash mode.
 
-### Example Problem
-**Problem:** Arduino code will not load on ESP32 Cam.
-**Solution:** Camera drivers were incorrect I needed to install the driver: [https://www.wch-ic.com/downloads/CH341SER_ZIP.html](https://github.com/martin-ger/esp32_nat_router).  I used file, "CH341SER.ZIP" and it worked.
+Problem 2: Wrong board selected
+
+At one point, I selected the wrong board (4D Systems), which caused missing options and errors.
+Solution: I corrected this by selecting the correct board: AI Thinker ESP32-CAM.
+
+Problem 3: Missing file error (camera_pins.h)
+
+I got an error saying “camera_pins.h: No such file or directory.”
+Solution: This happened because I created a new sketch. I fixed it by opening the CameraWebServer example and saving it instead of creating a new file.
+
+Problem 4: Camera page not loading (HTTPS issue)
+
+The browser showed “can’t reach this page” when I tried to open the camera.
+Solution: I realized I was using https:// instead of http://. Changing it to http:// fixed the issue.
+
+Problem 5: IP address searched instead of opened
+
+The browser showed search results instead of the camera page.
+Solution: I typed the IP address directly in the browser’s address bar instead of the search bar.
+
 
 ## Final Report
