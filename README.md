@@ -23,7 +23,7 @@ ESP32 Board package: https://dl.espressif.com/dl/package_esp32_index.json
 https://randomnerdtutorials.com/esp32-cam-access-point-ap-web-server/
 
 ##### Video 1: 
-https://www.youtube.com/watch?v=4inE-n6kXSE
+
 
 ##### Other Links: 
 https://lastminuteengineers.com/getting-started-with-esp32-cam/
