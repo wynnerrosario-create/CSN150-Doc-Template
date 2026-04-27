@@ -2,7 +2,7 @@
 Project: ESP32-CAM Camera Setup
 
 ## Purpose
-In this lab, I set up the ESP32-CAM and uploaded camera firmware using Arduino IDE. The goal was to connect the camera to WiFi and stream live video through a web browser. 
+In this lab, I configured the ESP32-CAM to create its own WiFi access point instead of connecting to an external network. This allowed me to connect directly to the ESP32 and access a web server hosted on it.
 
 ## Equipment
 - ESP32-CAM  
@@ -20,6 +20,8 @@ Arduino IDE: https://www.arduino.cc/en/software/
 
 ESP32 Board package: https://dl.espressif.com/dl/package_esp32_index.json
 
+https://randomnerdtutorials.com/esp32-cam-access-point-ap-web-server/
+
 ##### Video 1: 
 https://www.youtube.com/watch?v=4inE-n6kXSE
 
@@ -29,40 +31,23 @@ https://lastminuteengineers.com/getting-started-with-esp32-cam/
 ##### AI GPTs used
 
 ## Steps I followed 
-1. Installed ESP32 board in Arduino IDE  
-2. Selected AI Thinker ESP32-CAM  
-3. Opened CameraWebServer example  
-4. Entered WiFi credentials  
-5. Configured camera model in board_config.h  
-6. Uploaded code using BOOT button  
-7. Opened Serial Monitor  
-8. Accessed camera using IP address
+1. Opened Arduino IDE
+2. Selected AI Thinker ESP32-CAM
+3. Wrote Access Point code using WiFi.softAP()
+4. Uploaded code using BOOT button
+5. Opened Serial Monitor to get IP address
+6. Connected to ESP32_AP WiFi
+7. Accessed web server using browser
    
 ## Problems and Solutions
-Problem 1: ESP32 failed to connect during upload
+Problem 1: Upload failed with “Failed to connect to ESP32”
+Solution: Held the BOOT button during upload to enter flash mode
 
-I received the error “Failed to connect to ESP32” when trying to upload the code.
-Solution: I fixed this by holding the BOOT button when the message “Connecting...” appeared so the board could enter flash mode.
+Problem 2: No output in Serial Monitor
+Solution: Pressed RESET button after opening Serial Monitor
 
-Problem 2: Wrong board selected
-
-At one point, I selected the wrong board (4D Systems), which caused missing options and errors.
-Solution: I corrected this by selecting the correct board: AI Thinker ESP32-CAM.
-
-Problem 3: Missing file error (camera_pins.h)
-
-I got an error saying “camera_pins.h: No such file or directory.”
-Solution: This happened because I created a new sketch. I fixed it by opening the CameraWebServer example and saving it instead of creating a new file.
-
-Problem 4: Camera page not loading (HTTPS issue)
-
-The browser showed “can’t reach this page” when I tried to open the camera.
-Solution: I realized I was using https:// instead of http://. Changing it to http:// fixed the issue.
-
-Problem 5: IP address searched instead of opened
-
-The browser showed search results instead of the camera page.
-Solution: I typed the IP address directly in the browser’s address bar instead of the search bar.
-
+Problem 3: “No Internet connection” message
+Solution: Understood that ESP32 Access Point does not provide internet and continued to access the local server
 
 ## Final Report
+In this lab, I successfully created a WiFi access point using the ESP32-CAM and hosted a web server. I connected directly to the ESP32 network and accessed the server through the browser. This demonstrated how the ESP32 can operate independently without needing an external internet connection.
