@@ -1,13 +1,14 @@
 # Cybersecurity : CSN150
-Project: ESP32-CAM Camera Setup
+Project: ESP32-CAM Telegram Photo Sender
 
 ## Purpose
-In this lab, I configured the ESP32-CAM to create its own WiFi access point instead of connecting to an external network. This allowed me to connect directly to the ESP32 and access a web server hosted on it.
+The purpose of this project was to use the ESP32-CAM to capture an image and send it through a Telegram bot. This demonstrates real-time communication between IoT devices and cloud-based messaging platforms.
 
 ## Equipment
 - ESP32-CAM  
 - USB cable  
 - Arduino IDE
+- Computer
   
 * [ESP32Cam](https://www.amazon.com/Aideepen-ESP32-CAM-Bluetooth-ESP32-CAM-MB-Arduino/dp/B08P2578LV/ref=sr_1_3?crid=4FY0ECFW0ZX7&keywords=ESP32+Cam&qid=1678902050&sprefix=esp32+cam%2Caps%2C240&sr=8-3)
 
@@ -26,28 +27,29 @@ https://randomnerdtutorials.com/esp32-cam-access-point-ap-web-server/
 
 
 ##### Other Links: 
-https://lastminuteengineers.com/getting-started-with-esp32-cam/
+
 
 ##### AI GPTs used
 
 ## Steps I followed 
-1. Opened Arduino IDE
-2. Selected AI Thinker ESP32-CAM
-3. Wrote Access Point code using WiFi.softAP()
-4. Uploaded code using BOOT button
-5. Opened Serial Monitor to get IP address
-6. Connected to ESP32_AP WiFi
-7. Accessed web server using browser
-   
+1. Created a Telegram bot using BotFather
+2. Obtained the bot token
+3. Retrieved my Chat ID using @userinfobot
+4. Configured ESP32-CAM with WiFi credentials
+5. Added bot token and Chat ID to the code
+6. Uploaded the code using BOOT button
+7. Verified connection using Serial Monitor
+8. Sent /photo command through Telegram
+
 ## Problems and Solutions
-Problem 1: Upload failed with “Failed to connect to ESP32”
-Solution: Held the BOOT button during upload to enter flash mode
+Problem: ESP32 failed to upload code
+Solution: Held BOOT button and reduced upload speed
 
-Problem 2: No output in Serial Monitor
-Solution: Pressed RESET button after opening Serial Monitor
+Problem: Code errors (missing function, syntax issues)
+Solution: Fixed code structure and added required functions
 
-Problem 3: “No Internet connection” message
-Solution: Understood that ESP32 Access Point does not provide internet and continued to access the local server
+Problem: Telegram bot not responding
+Solution: Corrected bot token, Chat ID, and loop logic
 
 ## Final Report
-In this lab, I successfully created a WiFi access point using the ESP32-CAM and hosted a web server. I connected directly to the ESP32 network and accessed the server through the browser. This demonstrated how the ESP32 can operate independently without needing an external internet connection.
+In this project, I successfully integrated the ESP32-CAM with a Telegram bot to capture and send images over the internet. This demonstrates how IoT devices can communicate with cloud services and mobile applications in real time. The project can be applied in areas such as security systems, remote monitoring, and automation.
