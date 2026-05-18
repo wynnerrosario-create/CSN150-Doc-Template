@@ -1,0 +1,81 @@
+# ESP32-CAM Security Monitoring System
+
+## Project Overview
+
+This project is a cybersecurity-focused IoT monitoring system using the ESP32-CAM. The ESP32 connects to WiFi, creates its own Access Point, and communicates with a Telegram bot to send photos remotely. The project demonstrates wireless networking, remote monitoring, and IoT communication concepts.
+
+---
+
+## Cybersecurity Purpose
+
+The purpose of this project is to demonstrate how IoT devices can be used for remote monitoring and wireless communication in cybersecurity environments. The ESP32-CAM can send images remotely through Telegram and operate as both a WiFi client and an Access Point.
+
+---
+
+## Equipment Used
+
+* ESP32-CAM
+* USB cable
+* Computer
+* Smartphone
+* Home WiFi router
+
+---
+
+## Tools Used
+
+* Arduino IDE
+* Telegram Bot API
+* GitHub
+* ChatGPT
+* ESP32 board package
+
+---
+
+## Installation / Configuration Steps
+
+1. Installed Arduino IDE
+2. Installed ESP32 board package
+3. Selected AI Thinker ESP32-CAM board
+4. Configured WiFi credentials
+5. Configured Telegram bot token and Chat ID
+6. Uploaded code using BOOT and RESET buttons
+7. Opened Serial Monitor
+8. Verified WiFi connection
+9. Verified Access Point mode
+10. Tested Telegram photo command
+
+---
+
+## Troubleshooting / Problems Encountered
+
+### Problem 1: ESP32 failed to upload
+
+Solution: Used BOOT and RESET sequence and lowered upload speed to 115200.
+
+### Problem 2: Wrong boot mode detected
+
+Solution: Forced ESP32 into flash/download mode using BOOT button.
+
+### Problem 3: Access Point did not appear
+
+Solution: Added `WiFi.softAP(ap_ssid, ap_password);` correctly inside setup().
+
+### Problem 4: Telegram bot not responding
+
+Solution: Corrected Chat ID and bot token configuration.
+
+## Final Report
+
+In this project, I configured the ESP32-CAM to operate in both Station Mode and Access Point Mode. The ESP32 connected to WiFi while also creating its own wireless network called “CSN150_Lab_Test”. I integrated Telegram functionality to remotely send photos from the ESP32-CAM to my phone. This project helped me better understand IoT security, wireless networking, troubleshooting, and remote monitoring systems.
+
+This project was tested in a controlled lab environment using my own devices and network for educational purposes only.
+
+---
+
+## Resources
+
+* Arduino IDE
+* ESP32-CAM Tutorials
+* Telegram Bot API
+* GitHub Repository
